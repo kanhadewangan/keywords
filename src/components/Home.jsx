@@ -44,8 +44,20 @@ export const Home = () => {
         </p>
 
     </div>
-    <div className=' bg-amber-400'>1</div>
-    <div className='bg-blue-300'>2</div>
+    <div className="bg-amber-400 flex flex-col items-center justify-center p-4">
+  <img src="src\assets\design.png" alt="Team Member" className="w-26 h-26 rounded-full mb-2 object-contain" />
+  <h2 className="font-bold">Jane Doe</h2>
+  <p className="text-sm text-gray-800">Lead Designer</p>
+</div>
+    <div className='bg-blue-300 flex flex-col items-center justify-center p-4'>
+      <h2 className="font-bold mb-2">Our Values</h2>
+      <ul className="text-sm text-gray-800">
+        <li>• Innovation</li>
+        <li>• Quality</li>
+        <li>• Community</li>
+      </ul>
+      <button className="mt-4 px-4 py-2 bg-black text-white rounded">Join Us</button>
+    </div>
 </div>
 
  </>     
