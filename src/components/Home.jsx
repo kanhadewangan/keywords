@@ -1,7 +1,8 @@
+import { Keyboard } from 'lucide-react';
 import { Typewriter } from 'react-simple-typewriter';
 
 export const Home = () => {
-    const links = ["About", "Home", "Sections"];
+    const links = ["Features", "Gallery", "Specs", "Support"];
 
     return (
         <>
@@ -19,10 +20,11 @@ export const Home = () => {
                     {links.map((item, key) => (
                         <a href="#" className="m-4 p-3" key={key}>{item}</a>
                     ))}
+                    <button className=' w-24 h-12 bg-blue-500 rounded-2xl text-lg font-medium font-sans mr-2'> Buy Now</button>
                 </nav>
-                <h1 className="text-4xl   font-extrabold font-serif text-white absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 drop-shadow-lg">
+                <h1 className="text-4xl font-extrabold font-serif text-white absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 drop-shadow-lg">
                     <Typewriter
-                        words={["Unleash Your Potential, One Key at a Time."]}
+                        words={["The Ultimate Typing Experience"]}
                         loop={0}
                         cursor
                         cursorStyle='|'
@@ -32,9 +34,9 @@ export const Home = () => {
                     />
 
                 </h1>
-                <h3 className="absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-2xl text-white">
+                <h3 className="absolute m-2 top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30 text-2xl text-white">
                     <Typewriter
-                        words={["World Are Waiting for The New Revolution"]}
+                        words={["Introducing the KeyCraft keyboard, meticulously crafted for unparalleled comfort and precision. Elevate your typing to an art form."]}
                         loop={0}
                         cursor
                         cursorStyle="~"
@@ -44,13 +46,29 @@ export const Home = () => {
                 </h3>
             </div>
 
-            <div className='h-screen w-screen absolute bg-zinc-300 grid grid-cols-3 '>
-            <h1 className='text-5xl  font-semibold font-sans h-screen w-screen pt-[60px] text-center'>Why Choose KeyCraft?</h1>
-            <div className=''></div>
+            <div className='h-screen w-screen absolute bg-zinc-300  '>
+                <div className=''>
+                    <div>
+                        <h1 className='text-5xl h-40 font-semibold font-sans  pt-[60px] m-4 text-start'>Features</h1>
+                        <h1 className='text-4xl m-4 h-30 font-bold'>Crafted for Excellence</h1>
+                        <p className='m-2'>Experience the difference with TypeCraft's innovative features.</p>
+                        <div className=' w-screen  '>
+                        <div className='  bg-amber-700 grid  grid-col-4  '>
+                            <div className=' col-span-2 bg-amber-300 h-40 '>
+                               <div> <Keyboard /></div>
+                               <h3 className='text-lg'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam at quod magnam recusandae optio voluptatibus explicabo maiores! Sed assumenda, ex aliquam ea aspernatur, omnis consectetur unde eos ad quas consequuntur.</h3>
+                            </div>
+                            <div className=' col-span-3 bg-amber-200'><Keyboard /></div>
+                            <div className=' col-span-4 bg-amber-500'><Keyboard /></div>
+                            <div className=' col-span-1 bg-amber-600'><Keyboard /></div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-                        
-                
-              
+
+
+
         </>
     );
 };
