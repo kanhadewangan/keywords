@@ -1,18 +1,16 @@
-import { Keyboard, Zap, Shield, Palette, Headphones, Star, ChevronRight, CheckCircle, ArrowRight, Play, MousePointer, Cpu, Wifi } from 'lucide-react';
+import { Zap, Shield, Palette, Headphones, Star, ChevronRight, CheckCircle, ArrowRight, Play, MousePointer, Cpu, Wifi, Keyboard } from 'lucide-react';
 import { Typewriter } from 'react-simple-typewriter';
-import { motion, useScroll, useTransform, useInView } from 'motion/react';
+import { motion } from 'motion/react';
 import { useRef, useState } from 'react';
 import React from 'react';
-// Locomotive Scroll imports removed
 
 export const Home = () => {
     const containerRef = useRef(null);
-    // const scrollRef = useRef(null); // Locomotive instance removed
     const [hoveredFeature, setHoveredFeature] = useState(null);
-    
+    const [hoveredCard, setHoveredCard] = useState(null);
+    const [hoveredIcon, setHoveredIcon] = useState(null);
     const links = ["Features", "Gallery", "Specs", "Support"];
 
-    // Static SVG logo (keyboard + spark)
     const LogoSVG = (
         <svg
             width="40" height="40" viewBox="0 0 48 48" fill="none"
@@ -42,7 +40,7 @@ export const Home = () => {
             icon: <Zap className="w-8 h-8" />,
             title: "Lightning Fast Response",
             description: "1ms response time with advanced mechanical switches for ultimate precision.",
-            video: "src\assets\0c9e362a17b3d6a9ff9fb4e2619b4be5.mp4",
+            video: "src\\assets\\0c9e362a17b3d6a9ff9fb4e2619b4be5.mp4",
             image: "src/assets/design.png",
             color: "from-yellow-400 to-orange-500"
         },
@@ -51,7 +49,7 @@ export const Home = () => {
             icon: <Shield className="w-8 h-8" />,
             title: "Premium Build Quality",
             description: "Aircraft-grade aluminum frame with premium PBT keycaps for durability.",
-            video: "src/assets/1746e4fd0dbdf67bc0a4e465a00c3b30.mp4",
+            video: "src\\assets\\cd458ceafc0db91be7e7fa1c37da0f1a.mp4",
             image: "src/assets/image.png",
             color: "from-blue-400 to-purple-500"
         },
@@ -60,7 +58,7 @@ export const Home = () => {
             icon: <Palette className="w-8 h-8" />,
             title: "Customizable RGB",
             description: "16.8 million colors with per-key customization and dynamic effects.",
-            video: "src/assets/1746e4fd0dbdf67bc0a4e465a00c3b30.mp4",
+            video: "src\\assets\\0c9e362a17b3d6a9ff9fb4e2619b4be5.mp4",
             image: "src/assets/design.png",
             color: "from-pink-400 to-red-500"
         },
@@ -69,7 +67,7 @@ export const Home = () => {
             icon: <Headphones className="w-8 h-8" />,
             title: "Silent Operation",
             description: "Advanced noise dampening technology for quiet, focused typing.",
-            video: "src/assets/1746e4fd0dbdf67bc0a4e465a00c3b30.mp4",
+            video: "src\\assets\\42f01debb2d80ad2b9a1f147f3ba0634.mp4",
             image: "src/assets/image.png",
             color: "from-green-400 to-teal-500"
         }
@@ -84,22 +82,9 @@ export const Home = () => {
         { label: "Weight", value: "1.2kg", icon: <Shield className="w-6 h-6" /> }
     ];
 
+    
 
-    const AnimatedSection = React.memo(({ children, className = "" }) => {
-        const ref = useRef(null);
-        const isInView = useInView(ref, { once: true, margin: "-100px" });
-        return (
-            <motion.div
-                ref={ref}
-                initial={{ opacity: 0, y: 100 }}
-                animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 100 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-                className={className}
-            >
-                {children}
-            </motion.div>
-        );
-    });
+   
 
     return (
         <div ref={containerRef} className="min-h-screen bg-black">
@@ -114,7 +99,6 @@ export const Home = () => {
                     alt="background"
                 />
                 <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/80"></div>
-                
                 {/* Animated Background Elements */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
                     {[...Array(20)].map((_, i) => (
@@ -138,7 +122,6 @@ export const Home = () => {
                         />
                     ))}
                 </div>
-                
                 {/* Navigation */}
                 <nav className="absolute top-0 left-0 right-0 z-50 p-6">
                     <div className="max-w-7xl mx-auto flex justify-between items-center">
@@ -177,8 +160,8 @@ export const Home = () => {
                             ))}
                             <motion.button 
                                 className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-3 rounded-full font-medium"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
+                                onHoverStart={() => {}}
+                                onHoverEnd={() => {}}
                             >
                                 Buy Now
                             </motion.button>
@@ -227,16 +210,16 @@ export const Home = () => {
                     >
                         <motion.button 
                             className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center justify-center"
-                            whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(59, 130, 246, 0.4)" }}
-                            whileTap={{ scale: 0.95 }}
+                            onHoverStart={() => {}}
+                            onHoverEnd={() => {}}
                         >
                             Order Now
                             <ArrowRight className="ml-2 w-5 h-5" />
                         </motion.button>
                         <motion.button 
                             className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 flex items-center justify-center"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                            onHoverStart={() => {}}
+                            onHoverEnd={() => {}}
                         >
                             <Play className="mr-2 w-5 h-5" />
                             Watch Demo
@@ -248,14 +231,17 @@ export const Home = () => {
             {/* Features Section with Hover Effects */}
             <section id="features" className="py-20 bg-gradient-to-b from-black to-gray-900 relative overflow-hidden">
                 <div className="max-w-7xl mx-auto px-6">
-                    <AnimatedSection className="text-center mb-16">
+                    <motion.div
+                       initial={{ opacity: 0, y: 50 }}
+                       whileInView={{ opacity: 1, y: 0 }}
+                        className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
                             Crafted for Excellence
                         </h2>
                         <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                             Experience the difference with KeyCraft's innovative features designed for professionals and enthusiasts alike.
                         </p>
-                    </AnimatedSection>
+                    </motion.div>
                     
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {features.map((feature, index) => (
@@ -272,7 +258,7 @@ export const Home = () => {
                                 <motion.div
                                     className="absolute inset-0 rounded-2xl overflow-hidden opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10"
                                     initial={{ scale: 0.8 }}
-                                    whileHover={{ scale: 1 }}
+                                    animate={hoveredFeature === feature.id ? { scale: 1 } : { scale: 0.8 }}
                                     transition={{ duration: 0.3 }}
                                 >
                                     {hoveredFeature === feature.id && (
@@ -291,11 +277,12 @@ export const Home = () => {
                                 {/* Feature Card */}
                                 <motion.div 
                                     className="bg-gray-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-700/50 relative z-20 group-hover:bg-gray-800/80 transition-all duration-500"
-                                    whileHover={{ y: -10, scale: 1.02 }}
+                                    animate={hoveredFeature === feature.id ? { y: -10, scale: 1.02 } : { y: 0, scale: 1 }}
+                                    transition={{ duration: 0.3 }}
                                 >
                                     <motion.div 
                                         className={`bg-gradient-to-br ${feature.color} w-16 h-16 rounded-full flex items-center justify-center mb-6 text-white`}
-                                        whileHover={{ rotate: 360 }}
+                                        animate={hoveredFeature === feature.id ? { rotate: 360 } : { rotate: 0 }}
                                         transition={{ duration: 0.6 }}
                                     >
                                         {feature.icon}
@@ -312,14 +299,17 @@ export const Home = () => {
             {/* Gallery Section */}
             <section id="gallery" className="py-20 bg-black relative">
                 <div className="max-w-7xl mx-auto px-6">
-                    <AnimatedSection className="text-center mb-16">
+                    <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
                             Visual Excellence
                         </h2>
                         <p className="text-xl text-gray-300">
                             Every detail matters. See the craftsmanship up close.
                         </p>
-                    </AnimatedSection>
+                    </motion.div>
                     
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {[
@@ -333,7 +323,8 @@ export const Home = () => {
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                                whileHover={{ scale: 1.05, rotateY: 5 }}
+                                onHoverStart={() => setHoveredCard(index)}
+                                onHoverEnd={() => setHoveredCard(null)}
                             >
                                 <motion.div
                                     className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"
@@ -341,7 +332,7 @@ export const Home = () => {
                                 <div className="relative z-10">
                                     <motion.div 
                                         className="mb-4"
-                                        whileHover={{ rotate: 360 }}
+                                        animate={hoveredCard === index ? { rotate: 360 } : { rotate: 0 }}
                                         transition={{ duration: 0.6 }}
                                     >
                                         {item.icon}
@@ -358,14 +349,16 @@ export const Home = () => {
             {/* Specifications Section */}
             <section id="specs" className="py-20 bg-gradient-to-b from-gray-900 to-black text-white relative">
                 <div className="max-w-7xl mx-auto px-6">
-                    <AnimatedSection className="text-center mb-16">
+                    <motion.div className="text-center mb-16"
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}>
                         <h2 className="text-4xl md:text-5xl font-bold mb-4">
                             Technical Specifications
                         </h2>
                         <p className="text-xl text-gray-300">
                             Built with cutting-edge technology for uncompromising performance.
                         </p>
-                    </AnimatedSection>
+                    </motion.div>
                     
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {specs.map((spec, index) => (
@@ -375,13 +368,14 @@ export const Home = () => {
                                 initial={{ opacity: 0, x: -50 }}
                                 whileInView={{ opacity: 1, x: 0 }}
                                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                                whileHover={{ scale: 1.05, y: -5 }}
+                                onHoverStart={() => setHoveredIcon(index)}
+                                onHoverEnd={() => setHoveredIcon(null)}
                             >
                                 <div className="flex items-center justify-between mb-4">
                                     <span className="text-gray-400 font-medium">{spec.label}</span>
                                     <motion.div
                                         className="text-blue-400"
-                                        whileHover={{ rotate: 360 }}
+                                        animate={hoveredIcon === index ? { rotate: 360 } : { rotate: 0 }}
                                         transition={{ duration: 0.6 }}
                                     >
                                         {spec.icon}
@@ -403,20 +397,23 @@ export const Home = () => {
             {/* Support Section */}
             <section id="support" className="py-20 bg-black relative">
                 <div className="max-w-7xl mx-auto px-6">
-                    <AnimatedSection className="text-center mb-16">
+                    <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
                             We're Here to Help
                         </h2>
                         <p className="text-xl text-gray-300">
                             Get the support you need, when you need it.
                         </p>
-                    </AnimatedSection>
+                    </motion.div>
                     
                     <div className="grid md:grid-cols-3 gap-8">
                         {[
                             { icon: <Headphones className="w-8 h-8" />, title: "24/7 Support", desc: "Round-the-clock customer service for all your needs.", color: "blue" },
-                            { icon: <Shield className="w-8 h-8" />, title: "3-Year Warranty", desc: "Comprehensive coverage for peace of mind.", color: "green" },
-                            { icon: <Star className="w-8 h-8" />, title: "Premium Service", desc: "Priority support for our valued customers.", color: "purple" }
+                            { icon: <Shield   color='blue' className="w-8 h-8" />, title: "3-Year Warranty", desc: "Comprehensive coverage for peace of mind.", color: "green" },
+                            { icon: <Star  color = " blue " className="w-8 h-8" />, title: "Premium Service", desc: "Priority support for our valued customers.", color: "purple" }
                         ].map((item, index) => (
                             <motion.div 
                                 key={index}
@@ -424,11 +421,12 @@ export const Home = () => {
                                 initial={{ opacity: 0, y: 50 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.8, delay: index * 0.2 }}
-                                whileHover={{ scale: 1.05, y: -10 }}
+                                onHoverStart={() => setHoveredCard(index + 10)}
+                                onHoverEnd={() => setHoveredCard(null)}
                             >
                                 <motion.div 
                                     className={`bg-${item.color}-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 text-${item.color}-600`}
-                                    whileHover={{ rotate: 360, scale: 1.1 }}
+                                    animate={hoveredCard === index + 10 ? { rotate: 360, scale: 1.1 } : { rotate: 0, scale: 1 }}
                                     transition={{ duration: 0.6 }}
                                 >
                                     {item.icon}
@@ -491,15 +489,15 @@ export const Home = () => {
                     >
                         <motion.button 
                             className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
-                            whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(255, 255, 255, 0.3)" }}
-                            whileTap={{ scale: 0.95 }}
+                            onHoverStart={() => {}}
+                            onHoverEnd={() => {}}
                         >
                             Order Now - $299
                         </motion.button>
                         <motion.button 
                             className="border-2 border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                            onHoverStart={() => {}}
+                            onHoverEnd={() => {}}
                         >
                             Learn More
                         </motion.button>
