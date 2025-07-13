@@ -1,8 +1,38 @@
-# React + Vite
+# KeyCraft Keyboard Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Demo: [https://keycraft-fawn.vercel.app/](https://keycraft-fawn.vercel.app/)
 
-Currently, two official plugins are available:
+## Overview
+KeyCraft is a visually stunning, interactive landing page for a premium mechanical keyboard. Built with React, Vite, Framer Motion, and Tailwind CSS, it showcases product features, gallery, technical specifications, and support information with modern animations and effects.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Animated Hero Section:** Eye-catching intro with typewriter effect and background video.
+- **Feature Highlights:** Interactive cards with hover-activated videos and icons.
+- **Gallery:** Visual showcase of product design and lighting.
+- **Technical Specs:** Animated specification cards with icons.
+- **Support Section:** Customer support and warranty info.
+- **Responsive Design:** Looks great on all devices.
+- **Modern UI:** Built with Tailwind CSS and Framer Motion for smooth transitions.
+
+## Getting Started
+1. Clone the repo:
+   ```sh
+   git clone https://github.com/kanhadewangan/keywords.git
+   cd keywords
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Run locally:
+   ```sh
+   npm run dev
+   ```
+
+## Tech Stack
+- React
+- Vite
+- Tailwind CSS
+- Framer Motion
+- Lucide Icons
+
