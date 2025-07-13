@@ -3,6 +3,7 @@ import { Typewriter } from 'react-simple-typewriter';
 import { motion } from 'motion/react';
 import { useRef, useState } from 'react';
 import React from 'react';
+import { video } from 'motion/react-client';
 
 export const Home = () => {
     const containerRef = useRef(null);
@@ -58,7 +59,7 @@ export const Home = () => {
             icon: <Palette className="w-8 h-8" />,
             title: "Customizable RGB",
             description: "16.8 million colors with per-key customization and dynamic effects.",
-            video: "https://console.cloudinary.com/app/c-82a10dbbc84a1516dc6763dc2d2ff5/assets/media_library/search/asset/4bfab3a38f6f3d6f4cf0f0cdc319e9e8/manage/summary?q=&view_mode=mosaic&context=manage",
+            video:"https://player.cloudinary.com/embed/?cloud_name=di6imgcup&public_id=0c9e362a17b3d6a9ff9fb4e2619b4be5_zkeo85&profile=cld-default",
             image: "src/assets/design.png",
             color: "from-pink-400 to-red-500"
         },
