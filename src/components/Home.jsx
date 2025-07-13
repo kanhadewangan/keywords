@@ -49,7 +49,7 @@ export const Home = () => {
             icon: <Shield className="w-8 h-8" />,
             title: "Premium Build Quality",
             description: "Aircraft-grade aluminum frame with premium PBT keycaps for durability.",
-            video: "src\\assets\\cd458ceafc0db91be7e7fa1c37da0f1a.mp4",
+            video: "https://res.cloudinary.com/di6imgcup/video/upload/v1752414958/cd458ceafc0db91be7e7fa1c37da0f1a_o3lne0.mp4",
             image: "src/assets/image.png",
             color: "from-blue-400 to-purple-500"
         },
@@ -58,7 +58,7 @@ export const Home = () => {
             icon: <Palette className="w-8 h-8" />,
             title: "Customizable RGB",
             description: "16.8 million colors with per-key customization and dynamic effects.",
-            video: "src\\assets\\0c9e362a17b3d6a9ff9fb4e2619b4be5.mp4",
+            video: "https://console.cloudinary.com/app/c-82a10dbbc84a1516dc6763dc2d2ff5/assets/media_library/search/asset/4bfab3a38f6f3d6f4cf0f0cdc319e9e8/manage/summary?q=&view_mode=mosaic&context=manage",
             image: "src/assets/design.png",
             color: "from-pink-400 to-red-500"
         },
@@ -67,7 +67,7 @@ export const Home = () => {
             icon: <Headphones className="w-8 h-8" />,
             title: "Silent Operation",
             description: "Advanced noise dampening technology for quiet, focused typing.",
-            video: "src\\assets\\42f01debb2d80ad2b9a1f147f3ba0634.mp4",
+            video: "https://res.cloudinary.com/di6imgcup/video/upload/v1752414886/42f01debb2d80ad2b9a1f147f3ba0634_rpqqoo.mp4",
             image: "src/assets/image.png",
             color: "from-green-400 to-teal-500"
         }
@@ -92,7 +92,7 @@ export const Home = () => {
             <section className="relative h-screen flex items-center justify-center overflow-hidden">
                 <video
                     className="absolute inset-0 w-full h-full object-cover"
-                    src="src/assets/1746e4fd0dbdf67bc0a4e465a00c3b30.mp4"
+                    src="https://res.cloudinary.com/di6imgcup/video/upload/v1752414806/1746e4fd0dbdf67bc0a4e465a00c3b30_qxjzwm.mp4"
                     autoPlay
                     loop
                     muted
